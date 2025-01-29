@@ -314,8 +314,7 @@ def infer(args:Config):
             images_res_pil = Image.fromarray((swap_res_tensor[0] * 127.5 + 128).cpu().numpy().astype("uint8").transpose(1, 2, 0))
             images_res_pil.save(os.path.join(save_swap_path, f"{drive_im_name}.jpg"), quality=100)
 
-from expdataloader import ExpDataLoader, OriImageLoader, get_hsid, get_sub_dir, get_pid
-from expdataloader.utils import merget_video
+from expdataloader import ExpDataLoader, get_sub_dir, get_pid
 
 class FaceAptDataLoader(ExpDataLoader):
     def __init__(self):
